@@ -12,6 +12,8 @@
 .container {
   width: 590px;
   height: 352px;
+  min-width: 590px;
+  min-height: 352px;
   position: relative;
 }
 
