@@ -1,0 +1,324 @@
+@import url('./nullstyle.css');
+@import url('./variable.css');
+
+.page {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 590px;
+  height: 352px;
+  position: relative;
+}
+
+.saucer {
+  height: 175px;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+}
+
+.saucer::after {
+  content: '';
+  position: absolute;
+  left: 115px;
+  bottom: -20px;
+  background: var(--shadow-from-saucer);
+  filter: blur(70px);
+  width: 518px;
+  height: 107px;
+}
+
+.saucer-stand {
+  position: absolute;
+  top: 0;
+  background-color: var(--main);
+  width: 100%;
+  height: 160px;
+  clip-path: ellipse(50% 50% at 50% 50%);
+  z-index: 2;
+  box-shadow: inset 45px 30px 50px var(--shadow-dark), inset -105px -55px 25px var(--shadow-light);
+}
+
+.saucer-stand::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--glare);
+  clip-path: path('M 0 80 A 295 80 0 0 1 590 80 L 590 85 A 295 75 0 0 0 0 85 Z');
+  transform: rotate(180deg);
+  bottom: 0;
+}
+
+.saucer-base {
+  width: 100%;
+  height: 87px;
+  clip-path: path('M 0 0 L 590 0 L 545 45 Q 515 80, 440 87 L 150 87 Q 75 80, 45 45 Z');
+  background-color: var(--main);
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  box-shadow: inset -60px 15px 40px var(--shadow-dark), inset 60px 15px 40px var(--shadow-dark);
+}
+
+.cup {
+  width: 366px;
+  height: 295px;
+  position: absolute;
+  top: 0;
+  left: 130px;
+}
+
+.cup::after {
+  content: '';
+  position: absolute;
+  left: 42px;
+  bottom: -7px;
+  width: 282px;
+  height: 32px;
+  background-color: var(--shadow-from-cup);
+  filter: blur(45px);
+  z-index: 3;
+}
+
+.cup-base {
+  width: 310px;
+  height: 252px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 5;
+}
+
+.cup-base-object {
+  background-color: var(--main);
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-bottom-left-radius: 150px;
+  border-bottom-right-radius: 150px;
+  box-shadow: inset 14px 10px 50px var(--shadow-dark), inset -45px 15px 50px var(--shadow-dark);
+}
+
+.cup-handle-back {
+  background: var(--light);
+  position: absolute;
+  z-index: -1;
+  top: 36px;
+  right: -59px;
+  width: 113px;
+  height: 170px;
+  clip-path: path('M 53 0 L 83 0, Q 110 3, 113 30 L 108 96 Q 75 155, 28 162 L 17 162 Q 69 125, 83 125 L 88 29 Q 87 21, 77 20 L 54 20 Z');
+}
+
+.cup-handle-back::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(80deg, rgba(224, 200, 178, 0.4) 40%, rgba(234, 234, 234, 0.2) 100%);
+}
+
+.cup-handle-front {
+  background-color: var(--dark);
+  position: absolute;
+  top: 41px;
+  right: -56px;
+  z-index: 6;
+  width: 110px;
+  height: 162px;
+  box-shadow: inset 60px 0 70px rgba(255, 255, 255, 0.3);
+  clip-path: path('M 54 0 L 77 0, Q 106 3, 110 29 L 105 88 Q 75 155, 28 162 L 17 162 Q 4 152, 17 142 L 28 142, Q 69 125, 83 88 L 88 29 Q 87 21, 77 20 L 54 20 Z');
+}
+
+.cup-handle-front::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(80deg, rgba(208, 180, 156, 0.6) 40%, rgba(234, 234, 234, 0.5) 100%);
+}
+
+.cup-glare {
+  position: absolute;
+  width: 65px;
+  height: 188px;
+  filter: blur(30px);
+  background-color: rgba(255, 255, 255, 0.7);
+  bottom: 15px;
+  left: 65px;
+  transform: rotate(-30deg);
+}
+
+.cup-top {
+  width: 310px;
+  height: 95px;
+  position: absolute;
+  top: -2px;
+  left: 0;
+  z-index: 7;
+  background-color: var(--glare);
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+.cup-top-insight {
+  width: 295px;
+  height: 85px;
+  position: absolute;
+  top: 0;
+  left: 7px;
+  z-index: 8;
+  background-color: var(--main);
+  clip-path: ellipse(50% 50% at 50% 50%);
+}
+
+.coffee {
+  width: 275.5px;
+  height: 65px;
+  position: absolute;
+  top: 20px;
+  left: 19px;
+  z-index: 9;
+}
+
+.coffee-foam {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(320deg, var(--coffee-medium) 65%, var(--coffee-light) 100%);
+  clip-path: ellipse(50% 50% at 50% 50%);
+  position: relative;
+  z-index: 10;
+  box-shadow: inset -33px -13px 25px var(--coffee-light), inset 0 10px 15px var(--coffee-light);
+}
+
+.coffee-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--coffee-dark);
+  clip-path: path('M 0 26 C 8 48, 120 20, 180 63 L 180 65 L 0 65 Z');
+}
+
+.bubbles {
+  width: 275.5px;
+  height: 65px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 11;
+}
+
+.bubble {
+  background: var(--coffee-light);
+  border-radius: 50%;
+  box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.5);
+  position: absolute;
+  display: block;
+  z-index: 11;
+}
+
+.bubble-large {
+  width: 13px;
+  height: 9px;
+}
+
+.bubble-medium {
+  width: 10px;
+  height: 7px;
+}
+
+.bubble-small {
+  width: 8px;
+  height: 4px;
+}
+
+.bubble[data-large-index="1"] {
+  top: 25px;
+  left: 40px;
+}
+
+.bubble[data-large-index="2"] {
+  top: 46px;
+  left: 181px;
+}
+
+.bubble[data-large-index="3"] {
+  top: 20px;
+  left: 227px;
+}
+
+.bubble[data-large-index="4"] {
+  top: 13px;
+  left: 246px;
+}
+
+.bubble[data-medium-index="1"] {
+  top: 23px;
+  left: 55px;
+}
+
+.bubble[data-medium-index="2"] {
+  top: 44px;
+  left: 168px;
+}
+
+.bubble[data-medium-index="3"] {
+  top: 32px;
+  left: 217px;
+}
+
+.bubble[data-medium-index="4"] {
+  top: 28px;
+  left: 242px;
+}
+
+.bubble[data-medium-index="5"] {
+  top: 2px;
+  left: 205px;
+}
+
+.bubble[data-small-index="1"] {
+  top: 33px;
+  left: 108px;
+}
+
+.bubble[data-small-index="2"] {
+  top: 39px;
+  left: 115px;
+}
+
+.bubble[data-small-index="3"] {
+  top: 48px;
+  left: 151px;
+}
+
+.bubble[data-small-index="4"] {
+  top: 58px;
+  left: 171px;
+}
+
+.bubble[data-small-index="5"] {
+  top: 42px;
+  left: 212px;
+}
+
+.bubble[data-small-index="6"] {
+  top: 31px;
+  left: 229px;
+}
+
+.bubble[data-small-index="7"] {
+  top: 13px;
+  left: 219px;
+}

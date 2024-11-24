@@ -1,0 +1,18 @@
+:root {
+  /* color vars */
+  --main: #F0E2D7;
+  --dark: #DAC4B1;
+  --light: #F5ECE5;
+  --glare: #EAEAEA;
+
+  --coffee-dark: #4C1D0E;
+  --coffee-medium: #AD511F;
+  --coffee-light: #E1A45D;
+
+  --shadow-from-cup: rgba(76, 29, 14, 0.65);
+  --shadow-from-saucer: #A69B9B;
+
+  --shadow-dark: #D9C3AF;
+  --shadow-light: rgba(255, 255, 255, 0.5);
+
+}
